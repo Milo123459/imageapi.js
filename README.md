@@ -15,5 +15,5 @@ async function test(){
 }
 test()
 ```
-This example would grab an image from r/meme
+This example would grab an image from r/meme <br>
 Please consider installing this package as it could help you alot!
