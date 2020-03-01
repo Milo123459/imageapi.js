@@ -5,4 +5,3 @@ async function test(){
         console.log(fetched)
 }
 test()
-//should work
