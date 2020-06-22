@@ -1,7 +1,6 @@
-const imageapi = require('../index')
+const imageapi = require("../index");
 
-async function test(){
-        let fetched = await imageapi('meme');
-        console.log(fetched)
+async function test() {
+  console.log(await imageapi(`meme`, true));
 }
-test()
+test();
