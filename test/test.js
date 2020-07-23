@@ -3,5 +3,17 @@ imageapi.js test file
 */
 const api = require('../index');
 ;(async() => {
-    console.log(await api.multiple(`dank`, `meme`, true));
+    await api("meme", true);
+    
+    await api("meme", true);
+    
+    await api("meme", true);
+    
+    await api("meme", true);
+    
+    await api("meme", true);
+    
+    await api("meme", true);
+    
+    console.log(api.fetched);
 })();

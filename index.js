@@ -15,7 +15,11 @@ module.exports = async function (sub, verb) {
   ).then((res) => res.json());
   let x = Date.now() - start;
   if (verb) console.log(`[IMAGEAPI.JS]: TOOK ${x}MS TO RECIEVE YOUR IMAGE. `);
-  if (a.error)
-    throw new TypeError("Error, probably due to an invalid subreddit!");
+  if (a.error) throw new TypeError("Error, probably due to an invalid subreddit!");
+  module.exports.fetched.push(`[${Date.now()}] | Subreddit: ${sub} | Response time: ${x}MS | Image: ${a.img}`)
   return a.img;
 };
+/**
+ * @returns {String[]}
+ */
+module.exports.fetched = [];
