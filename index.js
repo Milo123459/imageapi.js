@@ -14,9 +14,19 @@ module.exports = async function (sub, verb) {
     `https://image-api-2.glitch.me/reddit/${sub.toLowerCase()}`
   ).then((res) => res.json());
   let x = Date.now() - start;
-  if (verb) console.log(`[IMAGEAPI.JS]: TOOK ${x}MS TO RECIEVE YOUR IMAGE. SUBREDDIT: ${sub.toLowerCase()} IMAGE: ${a.img} REQUEST: ${a.packet}`);
-  if (a.error) throw new TypeError("Error, probably due to an invalid subreddit!");
-  module.exports.fetched.push(`[${Date.now()}] | Subreddit: ${sub.toLowerCase()} | Response time: ${x}MS | Image: ${a.img} | Request: ${a.packet}`);
+  if (verb)
+    console.log(
+      `[IMAGEAPI.JS]: TOOK ${x}MS TO RECIEVE YOUR IMAGE. SUBREDDIT: ${sub.toLowerCase()} IMAGE: ${
+        a.img
+      } REQUEST: ${a.packet}`
+    );
+  if (a.error)
+    throw new TypeError("Error, probably due to an invalid subreddit!");
+  module.exports.fetched.push(
+    `[${Date.now()}] | Subreddit: ${sub.toLowerCase()} | Response time: ${x}MS | Image: ${
+      a.img
+    } | Request: ${a.packet}`
+  );
   return a.img;
 };
 /**
@@ -38,12 +48,28 @@ module.exports.advanced = async function (sub, verb) {
     `https://image-api-2.glitch.me/reddit/${sub.toLowerCase()}`
   ).then((res) => res.json());
   let x = Date.now() - start;
-  if (verb) console.log(`[IMAGEAPI.JS]: TOOK ${x}MS TO RECIEVE YOUR IMAGE. SUBREDDIT: ${sub.toLowerCase()} IMAGE: ${a.img} REQUEST: ${a.packet}`);
-  if (a.error) throw new TypeError("Error, probably due to an invalid subreddit!");
-  module.exports.fetched.push(`[${Date.now()}] | Subreddit: ${sub.toLowerCase()} | Response time: ${x}MS | Image: ${a.img} | Request: ${a.packet}`);
+  if (verb)
+    console.log(
+      `[IMAGEAPI.JS]: TOOK ${x}MS TO RECIEVE YOUR IMAGE. SUBREDDIT: ${sub.toLowerCase()} IMAGE: ${
+        a.img
+      } REQUEST: ${a.packet}`
+    );
+  if (a.error)
+    throw new TypeError("Error, probably due to an invalid subreddit!");
+  module.exports.fetched.push(
+    `[${Date.now()}] | Subreddit: ${sub.toLowerCase()} | Response time: ${x}MS | Image: ${
+      a.img
+    } | Request: ${a.packet}`
+  );
   return {
     packet: a.packet,
     img: a.img,
-    res: x
-  }
+    res: x,
+  };
 };
+/**
+ * Get stats via the /stats endpoint
+ */
+module.exports.stats = async() => {
+  return await fetch("https://image-api-2.glitch.me/stats").then(res => res.json());
+}
