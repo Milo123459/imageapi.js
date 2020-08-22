@@ -20,5 +20,8 @@ I also added
 ```js
 api.stats() // returns an object containing stats on image-api-2.glitch.me
 ```
-
+Along with
+```js
+api.clearFetched() // Removes all elements in api.fetched
+```
 I hope this helps you!

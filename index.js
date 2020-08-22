@@ -73,3 +73,9 @@ module.exports.advanced = async function (sub, verb) {
 module.exports.stats = async() => {
   return await fetch("https://image-api-2.glitch.me/stats").then(res => res.json());
 }
+/**
+ * Clear the fetched cache
+ */
+module.exports.clearFetched = () => {
+  module.exports.fetched.length = 0;
+}
