@@ -18,7 +18,7 @@ api.fetched; // Returns an array with all images fetched.
 ```
 I also added
 ```js
-api.stats() // returns an object containing stats on image-api-2.glitch.me
+await api.stats() // returns an object containing stats on image-api-2 .glitch.me (async)
 ```
 Along with
 ```js
