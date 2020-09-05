@@ -7,7 +7,7 @@ A simple module to grab random images from a subreddit. Examples:<br><br>
     let fetched = await api("subreddit"[, verbose is either true or false])
     console.log(fetched); // logs the image;
     let advanced = await api.advanced("subreddit"[, verbose is either true or false]);
-    console.log(advanced); // { img: *img*, res: *response time*, packet: *request number*, title: *title*, views: *views* };
+    console.log(advanced); // { img: *img*, res: *response time*, packet: *request number*,  };
 })();
 ```
 

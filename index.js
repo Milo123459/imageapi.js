@@ -65,8 +65,6 @@ module.exports.advanced = async function (sub, verb) {
     packet: a.packet,
     img: a.img,
     res: x,
-    title: x.title,
-    views: x.views
   };
 };
 /**
