@@ -1,6 +1,6 @@
 {
   "name": "imageapi.js",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "repository": {
     "type": "git",
