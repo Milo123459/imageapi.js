@@ -1,6 +1,7 @@
 **ImageApi.JS**<br>
 A simple module to grab random images from a subreddit. Examples:<br><br>
 
+[![npm](https://img.shields.io/npm/dt/imageapi.js.svg?style=for-the-badge)](https://npmjs.com/package/imageapi.js)
 ```js
 ;(async() => {
     const api = require('imageapi.js');
