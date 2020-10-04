@@ -52,17 +52,16 @@ module.exports.advanced = async function (sub, verb) {
     console.log(
       `[IMAGEAPI.JS]: TOOK ${x}MS TO RECIEVE YOUR IMAGE. SUBREDDIT: ${sub.toLowerCase()} IMAGE: ${
         a.img
-      } REQUEST: ${a.packet}`
+      }`
     );
   if (a.error)
     throw new TypeError("Error, probably due to an invalid subreddit!");
   module.exports.fetched.push(
     `[${Date.now()}] | Subreddit: ${sub.toLowerCase()} | Response time: ${x}MS | Image: ${
       a.img
-    } | Request: ${a.packet}`
+    }`
   );
   return {
-    packet: a.packet,
     img: a.img,
     res: x,
   };
@@ -70,12 +69,14 @@ module.exports.advanced = async function (sub, verb) {
 /**
  * Get stats via the /stats endpoint
  */
-module.exports.stats = async() => {
-  return await fetch("https://image-api-2.glitch.me/stats").then(res => res.json());
-}
+module.exports.stats = async () => {
+  return await fetch("https://image-api-2.glitch.me/stats").then((res) =>
+    res.json()
+  );
+};
 /**
  * Clear the fetched cache
  */
 module.exports.clearFetched = () => {
   module.exports.fetched.length = 0;
-}
+};
