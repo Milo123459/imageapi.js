@@ -11,7 +11,7 @@ module.exports = async function (sub, verb) {
   if (!sub) throw new TypeError("Error, you did not specify a subreddit!");
   const start = Date.now();
   let a = await fetch(
-    `https://image-api-2.glitch.me/reddit/${sub.toLowerCase()}`
+    `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}`
   ).then((res) => res.json());
   let x = Date.now() - start;
   if (verb)
@@ -45,7 +45,7 @@ module.exports.advanced = async function (sub, verb) {
   if (!sub) throw new TypeError("Error, you did not specify a subreddit!");
   const start = Date.now();
   let a = await fetch(
-    `https://image-api-2.glitch.me/reddit/${sub.toLowerCase()}`
+    `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}`
   ).then((res) => res.json());
   let x = Date.now() - start;
   if (verb)
@@ -70,7 +70,7 @@ module.exports.advanced = async function (sub, verb) {
  * Get stats via the /stats endpoint
  */
 module.exports.stats = async () => {
-  return await fetch("https://image-api-2.glitch.me/stats").then((res) =>
+  return await fetch("https://imageapi.fionn.cc/stats").then((res) =>
     res.json()
   );
 };
