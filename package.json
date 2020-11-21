@@ -1,6 +1,6 @@
 {
   "name": "imageapi.js",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Milo123459/imageapi.js.git"
-  }
+  },
+  "typings": "index.d.ts"
 }
