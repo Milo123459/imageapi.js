@@ -9,7 +9,7 @@ A simple module to grab random images from a subreddit. Examples:<br><br>
     let fetched = await api("subreddit"[, verbose is either true or false])
     console.log(fetched); // logs the image;
     let advanced = await api.advanced("subreddit"[, verbose is either true or false]);
-    console.log(advanced); // { img: *img*, res: *response time*, };
+    console.log(advanced); // { img: string, res: number, title: string, upvotes: number, author: string };
 })();
 ```
 
@@ -22,7 +22,7 @@ api.fetched; // Returns an array with all images fetched.
 I also added
 
 ```js
-await api.stats(); // returns an object containing stats on image-api-2 .glitch.me (async)
+await api.stats(); // returns an object containing stats on imageapi.fionn.cc (async)
 ```
 
 Along with

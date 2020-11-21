@@ -64,6 +64,9 @@ module.exports.advanced = async function (sub, verb) {
   return {
     img: a.img,
     res: x,
+    title: a.img,
+    upvotes: a.upvotes,
+    author: a.author
   };
 };
 /**
