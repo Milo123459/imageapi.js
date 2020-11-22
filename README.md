@@ -32,3 +32,20 @@ api.clearFetched(); // Removes all elements in api.fetched
 ```
 
 I hope this helps you!
+
+**TYPESCRIPT!**
+
+In version 1.1.0+, ImageAPI has now got built in typings, this is how you'd use the default function:
+
+```ts
+import ImageAPI from 'imageapi.js';
+;(async() => {
+    await ImageAPI('meme');
+    //etc
+})();
+```
+How you use .fetched, .advances, .stats etc
+```ts
+import * as ImageAPI from 'imageapi.js';
+ImageAPI.fetched
+```
