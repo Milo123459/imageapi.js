@@ -58,7 +58,7 @@ module.exports.advanced = async function (sub, verb) {
     res: x,
     title: a.title,
     upvotes: a.upvotes,
-    author: a.author
+    author: a.author,
   };
 };
 /**

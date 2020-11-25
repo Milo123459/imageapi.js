@@ -26,14 +26,16 @@ I hope this helps you!
 In version 1.1.0+, ImageAPI has now got built in typings, this is how you'd use the default function:
 
 ```ts
-import ImageAPI from 'imageapi.js';
-;(async() => {
-    await ImageAPI('meme');
-    //etc
+import ImageAPI from "imageapi.js";
+(async () => {
+  await ImageAPI("meme");
+  //etc
 })();
 ```
+
 How you use .advanced, .stats etc
+
 ```ts
-import * as ImageAPI from 'imageapi.js';
-await ImageAPI.advanced()
+import * as ImageAPI from "imageapi.js";
+await ImageAPI.advanced();
 ```
