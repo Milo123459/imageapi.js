@@ -13,22 +13,10 @@ A simple module to grab random images from a subreddit. Examples:<br><br>
 })();
 ```
 
-I added in the following for a new update:
-
-```js
-api.fetched; // Returns an array with all images fetched.
-```
-
 I also added
 
 ```js
 await api.stats(); // returns an object containing stats on imageapi.fionn.cc (async)
-```
-
-Along with
-
-```js
-api.clearFetched(); // Removes all elements in api.fetched
 ```
 
 I hope this helps you!
@@ -44,8 +32,8 @@ import ImageAPI from 'imageapi.js';
     //etc
 })();
 ```
-How you use .fetched, .advances, .stats etc
+How you use .advanced, .stats etc
 ```ts
 import * as ImageAPI from 'imageapi.js';
-ImageAPI.fetched
+await ImageAPI.advanced()
 ```
