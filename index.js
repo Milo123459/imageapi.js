@@ -22,11 +22,7 @@ module.exports = async function (sub, verb) {
     );
   if (a.error)
     throw new TypeError("Error, probably due to an invalid subreddit!");
-  module.exports.fetched.push(
-    `[${Date.now()}] | Subreddit: ${sub.toLowerCase()} | Response time: ${x}MS | Image: ${
-      a.img
-    } | Request: ${a.packet}`
-  );
+
   return a.img;
 };
 /**
@@ -56,11 +52,7 @@ module.exports.advanced = async function (sub, verb) {
     );
   if (a.error)
     throw new TypeError("Error, probably due to an invalid subreddit!");
-  module.exports.fetched.push(
-    `[${Date.now()}] | Subreddit: ${sub.toLowerCase()} | Response time: ${x}MS | Image: ${
-      a.img
-    }`
-  );
+
   return {
     img: a.img,
     res: x,
@@ -76,10 +68,4 @@ module.exports.stats = async () => {
   return await fetch("https://imageapi.fionn.cc/stats").then((res) =>
     res.json()
   );
-};
-/**
- * Clear the fetched cache
- */
-module.exports.clearFetched = () => {
-  module.exports.fetched.length = 0;
 };

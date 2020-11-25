@@ -12,7 +12,5 @@ interface Stats {
     served: number;
 }
 declare function advanced (subreddit: string, verbose?: boolean): Promise<Advanced>;
-declare let fetched: string[] = [];
 declare function stats (): Promise<Stats>;
-declare function clearFetched (): void;
-export { advanced, fetched, stats, clearFetched }
+export { advanced, stats }
