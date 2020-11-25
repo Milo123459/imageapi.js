@@ -26,10 +26,6 @@ module.exports = async function (sub, verb) {
   return a.img;
 };
 /**
- * @returns {String[]}
- */
-module.exports.fetched = [];
-/**
  *
  * @param {String} sub The subreddit
  * @param {Boolean} [verb] Verbose logging

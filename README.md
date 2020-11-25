@@ -4,11 +4,11 @@ A simple module to grab random images from a subreddit. Examples:<br><br>
 [![npm](https://img.shields.io/npm/dt/imageapi.js.svg?style=for-the-badge)](https://npmjs.com/package/imageapi.js)
 
 ```js
+const api = require('imageapi.js');
 ;(async() => {
-    const api = require('imageapi.js');
-    let fetched = await api("subreddit"[, verbose is either true or false])
+    const fetched = await api("subreddit"[, verbose is either true or false])
     console.log(fetched); // logs the image;
-    let advanced = await api.advanced("subreddit"[, verbose is either true or false]);
+    const advanced = await api.advanced("subreddit"[, verbose is either true or false]);
     console.log(advanced); // { img: string, res: number, title: string, upvotes: number, author: string };
 })();
 ```
