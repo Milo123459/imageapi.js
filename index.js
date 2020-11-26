@@ -52,6 +52,3 @@ module.exports.stats = async () => {
     res.json()
   );
 };
-;(async() => {
-  console.log(await module.exports.advanced('meme'))
-})();
