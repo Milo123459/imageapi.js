@@ -1,4 +1,4 @@
-export default function (subreddit: string, verbose?: boolean): Promise<string>;
+export default function (subreddit: string): Promise<string>;
 interface Advanced {
   img: string;
   res: number;
@@ -12,8 +12,7 @@ interface Stats {
   served: number;
 }
 declare function advanced(
-  subreddit: string,
-  verbose?: boolean
+  subreddit: string
 ): Promise<Advanced>;
 declare function stats(): Promise<Stats>;
 export { advanced, stats };
