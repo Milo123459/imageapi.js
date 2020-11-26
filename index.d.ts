@@ -5,6 +5,9 @@ interface Advanced {
   title: string;
   upvotes: number;
   author: string;
+  upvoteRatio: number;
+  downvotes: number;
+  comments: number;
 }
 interface Stats {
   uptime: string;

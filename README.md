@@ -10,6 +10,8 @@ A simple module to grab random images from a subreddit.
 
 In version 1.1.7+ verbose logging has been removed.
 
+In version 1.1.6+ .fetched was rempoved (Performance reasons)
+
 ## Examples:
 
 ```js
@@ -18,7 +20,7 @@ const api = require('imageapi.js');
     const fetched = await api("subreddit")
     console.log(fetched); // logs the image;
     const advanced = await api.advanced("subreddit");
-    console.log(advanced); // { img: string, res: number, title: string, upvotes: number, author: string };
+    console.log(advanced); // { img: string, res: number, title: string, upvotes: number, author: string, upvoteRatio: number, comments: number, downvotes: number };
 })();
 ```
 
