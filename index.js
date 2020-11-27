@@ -7,12 +7,12 @@ const fetch = require("node-fetch");
  * @Milo123459
  */
 module.exports = async function (sub) {
-  if (!sub) throw new TypeError("Error, you did not specify a subreddit!");
+  if (!sub) return Promise.reject('Error, you did not specify a subreddit!');
   const response = await fetch(
     `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}`
   ).then((res) => res.json());
-  if (response.error)
-    throw new TypeError("Error, probably due to an invalid subreddit!");
+  if (response.error || response.err)
+    return Promise.reject('Error, probably due to an invalid subreddit!');
 
   return response.img;
 };
@@ -23,15 +23,15 @@ module.exports = async function (sub) {
  * await api.advanced("meme");
  * @Milo123459
  */
-module.exports.advanced = async function (sub, verb) {
-  if (!sub) throw new TypeError("Error, you did not specify a subreddit!");
+module.exports.advanced = async function (sub) {
+  if (!sub) return Promise.reject("Error, you did not specify a subreddit!");
   const start = Date.now();
   const response = await fetch(
     `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}`
   ).then((res) => res.json());
   const responseTime = Date.now() - start;
-  if (response.error)
-    throw new TypeError("Error, probably due to an invalid subreddit!");
+  if (response.error || response.err)
+    return Promise.reject("Error, probably due to an invalid subreddit!");
 
   return {
     img: response.img,
