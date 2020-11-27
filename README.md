@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/dt/imageapi.js.svg?style=for-the-badge)](https://npmjs.com/package/imageapi.js)
 
-A simple module to grab random images (and more, see [here](/#possible-data)) from a subreddit.
+A simple module to grab random images (and more, see [here](#possible-data)) from a subreddit.
 
 # NOTE!
 
