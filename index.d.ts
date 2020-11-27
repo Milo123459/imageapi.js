@@ -14,8 +14,6 @@ interface Stats {
   memory: string;
   served: number;
 }
-declare function advanced(
-  subreddit: string
-): Promise<Advanced>;
+declare function advanced(subreddit: string): Promise<Advanced>;
 declare function stats(): Promise<Stats>;
 export { advanced, stats };

@@ -1,8 +1,6 @@
 # ImageApi.JS
 
-
 [![npm](https://img.shields.io/npm/dt/imageapi.js.svg?style=for-the-badge)](https://npmjs.com/package/imageapi.js)
-
 
 A simple module to grab random images from a subreddit.
 
@@ -15,12 +13,12 @@ In version 1.1.6+ .fetched was rempoved (Performance reasons)
 ## Examples:
 
 ```js
-const api = require('imageapi.js');
-;(async() => {
-    const fetched = await api("subreddit")
-    console.log(fetched); // logs the image;
-    const advanced = await api.advanced("subreddit");
-    console.log(advanced); // { img: string, res: number, title: string, upvotes: number, author: string, upvoteRatio: number, comments: number, downvotes: number };
+const api = require("imageapi.js");
+(async () => {
+  const fetched = await api("subreddit");
+  console.log(fetched); // logs the image;
+  const advanced = await api.advanced("subreddit");
+  console.log(advanced); // { img: string, res: number, title: string, upvotes: number, author: string, upvoteRatio: number, comments: number, downvotes: number };
 })();
 ```
 

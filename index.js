@@ -41,7 +41,7 @@ module.exports.advanced = async function (sub, verb) {
     author: response.author,
     upvoteRatio: response.upvoteRatio,
     comments: response.comments,
-    downvotes: response.downvotes
+    downvotes: response.downvotes,
   };
 };
 /**
