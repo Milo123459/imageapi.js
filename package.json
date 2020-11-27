@@ -3,9 +3,6 @@
   "version": "1.1.9",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "node test/test"
-  },
   "keywords": [
     "image",
     "api",

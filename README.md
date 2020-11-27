@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/dt/imageapi.js.svg?style=for-the-badge)](https://npmjs.com/package/imageapi.js)
 
-A simple module to grab random images from a subreddit.
+A simple module to grab random images (and more, see [here](/#possible-data)) from a subreddit.
 
 # NOTE!
 
@@ -48,3 +48,13 @@ How you use .advanced, .stats etc
 import * as ImageAPI from "imageapi.js";
 await ImageAPI.advanced();
 ```
+
+# Possible Data
+
+The API currently sends out this data, with added "res" which displays how long it took to get the image.
+
+```js
+{ img: string, res: number, title: string, upvotes: number, author: string, upvoteRatio: number, comments: number, downvotes: number };
+```
+
+Use .advanced to get these properties.
