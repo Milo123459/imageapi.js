@@ -1,25 +1,32 @@
 {
-  "name": "imageapi.js",
-  "version": "1.2.1",
-  "description": "",
-  "main": "index.js",
-  "keywords": [
-    "image",
-    "api",
-    "js",
-    "custom",
-    "reddit",
-    "imgur",
-    "async"
-  ],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "node-fetch": "^2.6.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Milo123459/imageapi.js.git"
-  },
-  "typings": "index.d.ts"
+	"name": "imageapi.js",
+	"version": "1.2.1",
+	"description": "",
+	"main": "dist/index.js",
+	"keywords": [
+		"image",
+		"api",
+		"js",
+		"custom",
+		"reddit",
+		"imgur",
+		"async"
+	],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"node-fetch": "^2.6.1"
+	},
+	"scripts": {
+		"build": "tsc"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Milo123459/imageapi.js.git"
+	},
+	"typings": "index.d.ts",
+	"devDependencies": {
+		"@types/node-fetch": "^2.5.7",
+		"typescript": "^4.1.2"
+	}
 }
