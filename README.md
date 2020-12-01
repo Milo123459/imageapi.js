@@ -8,7 +8,7 @@ A simple module to grab random images (and more, see [here](#possible-data)) fro
 
 In version 1.1.7+ verbose logging has been removed.
 
-In version 1.1.6+ .fetched was rempoved (Performance reasons)
+In version 1.1.6+ .fetched was removed (Performance reasons)
 
 ## Examples:
 
