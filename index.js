@@ -9,7 +9,7 @@ const fetch = require('node-fetch');
 module.exports = async function (sub) {
   if (!sub) return Promise.reject('Error, you did not specify a subreddit!');
   const response = await fetch(
-    `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}`
+    `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}`, { headers: { "user-agent": `ImageAPI.JS V${require('./package.json').version}` } }
   ).then((res) => res.json());
   if (response.error || response.err)
     return Promise.reject('Error, probably due to an invalid subreddit!');
@@ -27,7 +27,7 @@ module.exports.advanced = async function (sub) {
   if (!sub) return Promise.reject("Error, you did not specify a subreddit!");
   const start = Date.now();
   const response = await fetch(
-    `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}`
+    `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}`, { headers: { "user-agent": `ImageAPI.JS V${require('./package.json').version}` } }
   ).then((res) => res.json());
   const responseTime = Date.now() - start;
   if (response.error || response.err)
@@ -48,7 +48,7 @@ module.exports.advanced = async function (sub) {
  * Get stats via the /stats endpoint
  */
 module.exports.stats = async () => {
-  return await fetch("https://imageapi.fionn.cc/stats").then((res) =>
+  return await fetch("https://imageapi.fionn.cc/stats", { headers: { "user-agent": `ImageAPI.JS V${require('./package.json').version}` } }).then((res) =>
     res.json()
   );
 };
