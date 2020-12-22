@@ -1,5 +1,6 @@
 export default function (subreddit: string): Promise<string>;
-interface Advanced {
+
+export interface Advanced {
   img: string;
   res: number;
   title: string;
@@ -9,11 +10,14 @@ interface Advanced {
   downvotes: number;
   comments: number;
 }
-interface Stats {
+export interface Stats {
   uptime: string;
   memory: string;
   served: number;
 }
-declare function advanced(subreddit: string): Promise<Advanced>;
-declare function stats(): Promise<Stats>;
-export { advanced, stats };
+export declare type SortType = "top" | "new";
+export declare function advanced(
+  subreddit: string,
+  sort?: SortType
+): Promise<Advanced>;
+export declare function stats(): Promise<Stats>;

@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 /**
  *
  * @param {String} sub The subreddit
@@ -7,31 +7,62 @@ const fetch = require('node-fetch');
  * @Milo123459
  */
 module.exports = async function (sub) {
-  if (!sub) return Promise.reject('Error, you did not specify a subreddit!');
+  if (!sub) return Promise.reject("Error, you did not specify a subreddit!");
   const response = await fetch(
-    `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}`, { headers: { "user-agent": `ImageAPI.JS V${require('./package.json').version}` } }
+    `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}`,
+    {
+      headers: {
+        "user-agent": `ImageAPI.JS V${require("./package.json").version}`,
+      },
+    }
   ).then((res) => res.json());
   if (response.error || response.err)
-    return Promise.reject('Error, probably due to an invalid subreddit!');
+    return Promise.reject(
+      Object.entries(response)
+        .map(
+          (value) =>
+            `${value[0]}: ${
+              value[1].map ? value[1].map((v) => `${v}`).join(", ") : value[1]
+            }`
+        )
+        .join(" ")
+    );
 
   return response.img;
 };
 /**
  *
  * @param {String} sub The subreddit
+ * @param {String} [sort] How to sort, either top or new
  * @example
  * await api.advanced("meme");
  * @Milo123459
  */
-module.exports.advanced = async function (sub) {
+module.exports.advanced = async function (sub, sort) {
   if (!sub) return Promise.reject("Error, you did not specify a subreddit!");
   const start = Date.now();
   const response = await fetch(
-    `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}`, { headers: { "user-agent": `ImageAPI.JS V${require('./package.json').version}` } }
+    `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}${
+      sort ? `?sort=${sort}` : ""
+    }`.trim(),
+    {
+      headers: {
+        "user-agent": `ImageAPI.JS V${require("./package.json").version}`,
+      },
+    }
   ).then((res) => res.json());
   const responseTime = Date.now() - start;
   if (response.error || response.err)
-    return Promise.reject("Error, probably due to an invalid subreddit!");
+    return Promise.reject(
+      Object.entries(response)
+        .map(
+          (value) =>
+            `${value[0]}: ${
+              value[1].map ? value[1].map((v) => `${v}`).join(", ") : value[1]
+            }`
+        )
+        .join(" ")
+    );
 
   return {
     img: response.img,
@@ -41,14 +72,16 @@ module.exports.advanced = async function (sub) {
     author: response.author,
     upvoteRatio: response.upvoteRatio,
     comments: response.comments,
-    downvotes: response.downvotes
+    downvotes: response.downvotes,
   };
 };
 /**
  * Get stats via the /stats endpoint
  */
 module.exports.stats = async () => {
-  return await fetch("https://imageapi.fionn.cc/stats", { headers: { "user-agent": `ImageAPI.JS V${require('./package.json').version}` } }).then((res) =>
-    res.json()
-  );
+  return await fetch("https://imageapi.fionn.cc/stats", {
+    headers: {
+      "user-agent": `ImageAPI.JS V${require("./package.json").version}`,
+    },
+  }).then((res) => res.json());
 };

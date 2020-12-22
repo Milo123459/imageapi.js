@@ -4,6 +4,10 @@
 
 A simple module to grab random images (and more, see [here](#possible-data)) from a subreddit.
 
+**NEW!** Now you can sort between **top** & **new**! Click [here](#sort-types) for more info.
+
+If you come across a bug, please make an issue on the [Github repo](https://github.com/Milo123459/imageapi.js/issues/new)
+
 # NOTE!
 
 In version 1.1.7+ verbose logging has been removed.
@@ -58,3 +62,21 @@ The API currently sends out this data, with added "res" which displays how long 
 ```
 
 Use .advanced to get these properties.
+
+# Sort types
+
+In version 1.3.0+, on `.advanced` you can now specify a sort type. This is only on `.advanced`.
+
+There are 2 valid sort types: `top` and `new`! Please keep this in mind
+
+For example,
+
+```js
+const api = require("imageapi.js");
+
+(async () => {
+  await api.advanced("meme", "new"); // works fine
+  await api.advanced("meme", "top"); // works fine
+  await api.advanced("meme", "newtop"); // errors! returns a rejected promise
+})();
+```
