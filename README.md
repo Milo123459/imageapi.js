@@ -29,7 +29,7 @@ const api = require("imageapi.js");
 I also added
 
 ```js
-await api.stats(); // returns an object containing stats on imageapi.fionn.cc (async)
+await api.stats(); // returns an object containing stats on imageapi.fionn.live (async)
 ```
 
 I hope this helps you!
