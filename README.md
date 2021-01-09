@@ -57,8 +57,8 @@ await ImageAPI.advanced();
 
 The API currently sends out this data, with added "res" which displays how long it took to get the image.
 
-```js
-{ img: string, res: number, title: string, upvotes: number, author: string, upvoteRatio: number, comments: number, downvotes: number };
+```ts
+interface { img: string, res: number, title: string, upvotes: number, author: string, upvoteRatio: number, comments: number, downvotes: number, took: string, tookRaw: number };
 ```
 
 Use .advanced to get these properties.
