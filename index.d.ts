@@ -10,7 +10,8 @@ export interface Advanced {
   downvotes: number;
   comments: number;
   took: string;
-  tookRaw: number
+  tookRaw: number;
+  text: string;
 }
 export interface Stats {
   uptime: string;
