@@ -22,7 +22,7 @@ const api = require("imageapi.js");
   const fetched = await api("subreddit");
   console.log(fetched); // logs the image;
   const advanced = await api.advanced("subreddit");
-  console.log(advanced); // { img: string, res: number, title: string, upvotes: number, author: string, upvoteRatio: number, comments: number, downvotes: number };
+  console.log(advanced);
 })();
 ```
 
@@ -46,7 +46,7 @@ import ImageAPI from "imageapi.js";
 })();
 ```
 
-How you use .advanced, .stats etc
+How you use `.advanced`, `.stats` etc
 
 ```ts
 import * as ImageAPI from "imageapi.js";
