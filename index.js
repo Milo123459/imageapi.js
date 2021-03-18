@@ -40,7 +40,6 @@ module.exports = async function (sub) {
  */
 module.exports.advanced = async function (sub, sort) {
   if (!sub) return Promise.reject("Error, you did not specify a subreddit!");
-  const start = Date.now();
   const response = await fetch(
     `https://imageapi.fionn.live/reddit/${sub.toLowerCase()}${
       sort ? `?sort=${sort}` : ""
@@ -51,7 +50,6 @@ module.exports.advanced = async function (sub, sort) {
       },
     }
   ).then((res) => res.json());
-  const responseTime = Date.now() - start;
   if (response.error || response.err)
     return Promise.reject(
       Object.entries(response)
@@ -66,15 +64,12 @@ module.exports.advanced = async function (sub, sort) {
 
   return {
     img: response.img,
-    res: responseTime,
     title: response.title,
     upvotes: response.upvotes,
     author: response.author,
     upvoteRatio: response.upvoteRatio,
     comments: response.comments,
     downvotes: response.downvotes,
-    took: response.took,
-    tookRaw: response.tookRaw,
     text: response.text
   };
 };

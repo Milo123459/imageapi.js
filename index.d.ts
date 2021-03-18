@@ -1,17 +1,14 @@
 export default function (subreddit: string): Promise<string>;
 
 export interface Advanced {
-  img: string;
-  res: number;
+  img?: string;
   title: string;
   upvotes: number;
   author: string;
   upvoteRatio: number;
   downvotes: number;
   comments: number;
-  took: string;
-  tookRaw: number;
-  text: string;
+  text?: string;
 }
 export interface Stats {
   uptime: string;
