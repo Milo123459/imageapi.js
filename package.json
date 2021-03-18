@@ -1,25 +1,31 @@
 {
-  "name": "imageapi.js",
-  "version": "1.5.1",
-  "description": "",
-  "main": "index.js",
-  "keywords": [
-    "image",
-    "api",
-    "js",
-    "custom",
-    "reddit",
-    "async"
-  ],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "node-fetch": "^2.6.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Milo123459/imageapi.js.git"
-  },
-  "typings": "index.d.ts",
-  "devDependencies": {}
+	"name": "imageapi.js",
+	"version": "1.5.1",
+	"description": "",
+	"main": "index.js",
+	"keywords": [
+		"image",
+		"api",
+		"js",
+		"custom",
+		"reddit",
+		"async"
+	],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"node-fetch": "^2.6.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Milo123459/imageapi.js.git"
+	},
+	"typings": "index.d.ts",
+	"devDependencies": {
+		"eslint": "^7.22.0",
+		"prettier": "^2.2.1"
+	},
+	"scripts": {
+		"lint": "eslint **/*.{ts,js}"
+	}
 }

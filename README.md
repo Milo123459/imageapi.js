@@ -1,6 +1,6 @@
 # ImageAPI.JS
 
-[![npm](https://img.shields.io/npm/dt/imageapi.js.svg?style=for-the-badge)](https://npmjs.com/package/imageapi.js) [![stars](https://img.shields.io/github/stars/Milo123459/imageapi.js?style=for-the-badge)](https://github.com/Milo123459/imageapi.js) [![contributors](https://img.shields.io/github/contributors/Milo123459/imageapi.js?style=for-the-badge)](https://github.com/Milo123459/imageapi.js) 
+[![npm](https://img.shields.io/npm/dt/imageapi.js.svg?style=for-the-badge)](https://npmjs.com/package/imageapi.js) [![stars](https://img.shields.io/github/stars/Milo123459/imageapi.js?style=for-the-badge)](https://github.com/Milo123459/imageapi.js) [![contributors](https://img.shields.io/github/contributors/Milo123459/imageapi.js?style=for-the-badge)](https://github.com/Milo123459/imageapi.js)
 
 ## What?
 
@@ -22,12 +22,12 @@ The API is as fast as the Reddit API is. We can't speed it up, but, we have opti
 ```js
 const api = require('imageapi.js');
 (async () => {
-  const img = await api('subreddit');
-  console.log(img); // Logs the image
-  const advanced = await api.advanced('subreddit');
-  console.log(advanced); // Logs an object. Not all data may be present.
-  const stats = await api.stats();
-  console.log(stats); // Logs an object.
+	const img = await api('subreddit');
+	console.log(img); // Logs the image
+	const advanced = await api.advanced('subreddit');
+	console.log(advanced); // Logs an object. Not all data may be present.
+	const stats = await api.stats();
+	console.log(stats); // Logs an object.
 })();
 ```
 
@@ -39,12 +39,12 @@ const api = require('imageapi.js');
 ```js
 import api, { stats, advanced } from 'imageapi';
 (async () => {
-  const img = await api('subreddit');
-  console.log(img); // Logs the image
-  const advanced = await api.advanced('subreddit');
-  console.log(advanced); // Logs an object. Not all data may be present.
-  const stats = await api.stats();
-  console.log(stats); // Logs an object.
+	const img = await api('subreddit');
+	console.log(img); // Logs the image
+	const advanced = await api.advanced('subreddit');
+	console.log(advanced); // Logs an object. Not all data may be present.
+	const stats = await api.stats();
+	console.log(stats); // Logs an object.
 })();
 ```
 
