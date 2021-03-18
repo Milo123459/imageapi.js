@@ -11,21 +11,20 @@
 		"reddit",
 		"async"
 	],
-	"author": "",
+	"author": "Milo123459",
 	"license": "MIT",
 	"dependencies": {
 		"node-fetch": "^2.6.1"
+	},
+    "devDependencies": {
+		"prettier": "^2.2.1"
+	},
+	"scripts": {
+		"lint": "eslint **/*.{ts,js}"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Milo123459/imageapi.js.git"
 	},
-	"typings": "index.d.ts",
-	"devDependencies": {
-		"eslint": "^7.22.0",
-		"prettier": "^2.2.1"
-	},
-	"scripts": {
-		"lint": "eslint **/*.{ts,js}"
-	}
+	"typings": "index.d.ts"
 }
