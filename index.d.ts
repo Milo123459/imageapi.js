@@ -1,3 +1,4 @@
+// default export
 export default function (subreddit: string): Promise<string>;
 
 export interface Advanced {
