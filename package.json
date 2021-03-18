@@ -16,11 +16,15 @@
 	"dependencies": {
 		"node-fetch": "^2.6.1"
 	},
-    "devDependencies": {
-		"prettier": "^2.2.1"
+	"devDependencies": {
+		"@types/node": "^14.14.35",
+		"prettier": "^2.2.1",
+		"ts-node": "^9.1.1",
+		"typescript": "^4.2.3"
 	},
 	"scripts": {
-		"lint": "eslint **/*.{ts,js}"
+		"lint": "prettier --write .",
+		"test": "ts-node ./tests/typescript.ts && node ./tests/javascript.js"
 	},
 	"repository": {
 		"type": "git",
