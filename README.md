@@ -1,91 +1,63 @@
-# ImageApi.JS
+# ImageAPI.JS
 
-[![npm](https://img.shields.io/npm/dt/imageapi.js.svg?style=for-the-badge)](https://npmjs.com/package/imageapi.js)
+[![npm](https://img.shields.io/npm/dt/imageapi.js.svg?style=for-the-badge)](https://npmjs.com/package/imageapi.js) [![stars](https://img.shields.io/github/stars/Milo123459/imageapi.js?style=for-the-badge)](https://github.com/Milo123459/imageapi.js) [![contributors](https://img.shields.io/github/contributors/Milo123459/imageapi.js?style=for-the-badge)](https://github.com/Milo123459/imageapi.js) 
 
-A simple module to grab random images (and more, see [here](#possible-data)) from a subreddit.
+## What?
 
-**NEW!** Now you can sort between **top** & **new**! Click [here](#sort-types) for more info.
+**ImageAPI** is a wrapper for [ImageAPI.fionn.live](https://imageapi.fionn.live) - a fast **API** for fetching a random post from a subreddit.
 
-If you come across a bug, please make an issue on the [Github repo](https://github.com/Milo123459/imageapi.js/issues/new)
+## How?
 
-# NOTE!
+The main API is just fetching random data from the reddit API allowing for us to send the data we think is valid back to the user making the request.
 
-In version 1.1.7+ verbose logging has been removed.
+## Is it fast?
 
-In version 1.1.6+ .fetched was removed (Performance reasons)
+The API is as fast as the Reddit API is. We can't speed it up, but, we have optimized the code on the backend to make it as fast as possible.
 
 ## Examples:
 
+<details>
+<summary>✌ JS example</summary>
+
 ```js
-const api = require("imageapi.js");
+const api = require('imageapi.js');
 (async () => {
-  const fetched = await api("subreddit");
-  console.log(fetched); // logs the image;
-  const advanced = await api.advanced("subreddit");
-  console.log(advanced);
+  const img = await api('subreddit');
+  console.log(img); // Logs the image
+  const advanced = await api.advanced('subreddit');
+  console.log(advanced); // Logs an object. Not all data may be present.
+  const stats = await api.stats();
+  console.log(stats); // Logs an object.
 })();
 ```
 
-This also works:
+</details>
+
+<details>
+<summary>😎 TS example</summary>
 
 ```js
-await api.stats(); // returns an object containing stats on imageapi.fionn.live (async)
-```
-
-I hope this helps you!
-
-**TYPESCRIPT!**
-
-In version 1.1.0+, ImageAPI has now got built in typings, this is how you'd use the default function:
-
-```ts
-import ImageAPI from "imageapi.js";
+import api, { stats, advanced } from 'imageapi';
 (async () => {
-  await ImageAPI("meme");
-  //etc
+  const img = await api('subreddit');
+  console.log(img); // Logs the image
+  const advanced = await api.advanced('subreddit');
+  console.log(advanced); // Logs an object. Not all data may be present.
+  const stats = await api.stats();
+  console.log(stats); // Logs an object.
 })();
 ```
 
-How you use `.advanced`, `.stats` etc
+</details>
 
-```ts
-import * as ImageAPI from "imageapi.js";
-await ImageAPI.advanced();
-```
+## Sort types, `top` & `new`.
 
-# Possible Data
+If you want to get a 'new' or 'top' post, you can specify a sort type. The valid ones are `top` & `new`.
 
-The API currently sends out this data:
-
-```ts
-export interface Advanced {
-  img?: string;
-  title: string;
-  upvotes: number;
-  author: string;
-  upvoteRatio: number;
-  downvotes: number;
-  comments: number;
-  text?: string;
-}
-```
-
-Use .advanced to get these properties.
-
-# Sort types
-
-In version 1.3.0+, on `.advanced` you can now specify a sort type. This is only on `.advanced`.
-
-There are 2 valid sort types: `top` and `new`! Please keep this in mind
-
-For example,
+You specify this as a second paramter in the `advanced` function. For example:
 
 ```js
-const api = require("imageapi.js");
-
-(async () => {
-  await api.advanced("meme", "new"); // works fine
-  await api.advanced("meme", "top"); // works fine
-  await api.advanced("meme", "newtop"); // errors! returns a rejected promise
-})();
+api.advanced('meme', 'top'); // Gets a 'top' meme
+api.advanced('meme', 'new'); // Gets a 'new' meme
+api.advanced('meme', 'this-is-invalid'); // Errors, returns a rejected promise
 ```
