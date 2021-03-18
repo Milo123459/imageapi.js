@@ -54,7 +54,7 @@ import api, { stats, advanced } from 'imageapi';
 
 If you want to get a 'new' or 'top' post, you can specify a sort type. The valid ones are `top` & `new`.
 
-You specify this as a second paramter in the `advanced` function. For example:
+You specify this as a second paramter in the `advanced` & `default` function. For example:
 
 ```js
 api.advanced('meme', 'top'); // Gets a 'top' meme

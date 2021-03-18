@@ -1,5 +1,5 @@
 // default export
-export default function (subreddit: string): Promise<string>;
+export default function (subreddit: string, sort?: string): Promise<string>;
 
 export interface Advanced {
 	img?: string;

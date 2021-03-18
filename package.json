@@ -1,6 +1,6 @@
 {
 	"name": "imageapi.js",
-	"version": "1.5.1",
+	"version": "1.6.0",
 	"description": "",
 	"main": "index.js",
 	"keywords": [
@@ -17,14 +17,10 @@
 		"node-fetch": "^2.6.1"
 	},
 	"devDependencies": {
-		"@types/node": "^14.14.35",
-		"prettier": "^2.2.1",
-		"ts-node": "^9.1.1",
-		"typescript": "^4.2.3"
+		"prettier": "^2.2.1"
 	},
 	"scripts": {
-		"lint": "prettier --write .",
-		"test": "ts-node ./tests/typescript.ts && node ./tests/javascript.js"
+		"lint": "prettier --write ."
 	},
 	"repository": {
 		"type": "git",
