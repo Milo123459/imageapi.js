@@ -1,7 +1,7 @@
 {
 	"name": "imageapi.js",
 	"version": "1.6.0",
-	"description": "",
+	"description": "The best way to get random posts from subreddits",
 	"main": "index.js",
 	"keywords": [
 		"image",
