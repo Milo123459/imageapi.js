@@ -1,6 +1,6 @@
 {
 	"name": "imageapi.js",
-	"version": "1.6.0",
+	"version": "1.6.1",
 	"description": "The best way to get random posts from subreddits",
 	"main": "index.js",
 	"keywords": [
@@ -15,12 +15,6 @@
 	"license": "MIT",
 	"dependencies": {
 		"node-fetch": "^2.6.1"
-	},
-	"devDependencies": {
-		"prettier": "^2.2.1"
-	},
-	"scripts": {
-		"lint": "prettier --write ."
 	},
 	"repository": {
 		"type": "git",
