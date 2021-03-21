@@ -46,8 +46,8 @@ module.exports = async function (sub, sort) {
  */
 module.exports.advanced = async function (sub, sort) {
 	if (!sub) return Promise.reject('Error, you did not specify a subreddit!');
-	if (sort)
-		const response = await fetch(
+    if (sort && !sortTypes.includes(sort)) return Promise.reject('Error, you did not specify a valid sort type!');
+    const response = await fetch(
 			`https://imageapi.fionn.live/reddit/${sub.toLowerCase()}${
 				sort ? `?sort=${sort}` : ''
 			}`.trim(),
