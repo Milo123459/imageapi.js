@@ -10,6 +10,7 @@ export interface Advanced {
 	downvotes: number;
 	comments: number;
 	text?: string;
+    post: string;
 }
 export interface Stats {
 	uptime: string;

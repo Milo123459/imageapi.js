@@ -78,6 +78,7 @@ module.exports.advanced = async function (sub, sort) {
 		comments: response.comments,
 		downvotes: response.downvotes,
 		text: response.text,
+        post: response.post
 	};
 };
 /**
